@@ -14,4 +14,11 @@
  * solve('x - 2', 3);
  * @returns {Number} Returns the result of an expression with a substituted value x.
  */
-const solve = (equation, x) => eval(equation.replaceAll("x", x));
+const solve = (expression, x) => {
+	let result = undefined;
+	try {
+		result = eval(expression.replaceAll("x", x));
+	} catch (error) { ; }
+
+	return result;
+}
