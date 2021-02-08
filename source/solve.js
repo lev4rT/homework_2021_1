@@ -28,14 +28,8 @@ const solve = (expression, x) => {
 	if (expr.test(expression) === false) {
 		throw(new SyntaxError('Incorrect symbols in given expression'));
 	}
-	let result;  // The default value of uninitialized 'let' is undefined
-	try {
-		result = eval(expression.replaceAll('x', x));
-	} catch (error) {
-
-	}
-
-	return result;
+	
+	return eval(expression.replaceAll('x', x));;
 }
 
 /**
