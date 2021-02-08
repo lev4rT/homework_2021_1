@@ -41,18 +41,25 @@ const solve = (expression, x) => {
  * @example
  * // returns true
  * bracketsCheck('x + 2');
+ * @example
  * // returns true
  * bracketsCheck('(x + 2)');
+ * @example
  * // returns true
  * bracketsCheck('((x + 2))');
+ * @example
  * // returns true	
  * bracketsCheck('(x + 2) + (x + 3)');
+ * @example
  * // returns false
  * bracketsCheck('((x + 2)');
+ * @example
  * // returns false
  * bracketsCheck('(x + 2))');
+ * @example
  * // returns false
  * bracketsCheck('(x + 2 + (x + 3)');
+ * @example
  * // returns false
  * bracketsCheck('(x + 2) + (x + 3');
  * @returns {Boolean} true if expression is correct, false otherwise.
