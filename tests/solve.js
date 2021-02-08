@@ -34,4 +34,10 @@ QUnit.module('Тестируем функцию solve', function () {
 		assert.throws(() => solve('x / 2', 2), SyntaxError);
 		assert.throws(() => solve('x % 2', 2), SyntaxError);
 	});
+
+	QUnit.test('solve работает правильно. Обработка случаев передачи некоррентых параметров ', function (assert) {
+		assert.throws(() => solve(2, 2), TypeError);
+		assert.throws(() => solve('x + 2', 'qwe'), TypeError);
+		assert.throws(() => solve(2, 'x + 2'), TypeError);
+	});
 });
