@@ -21,6 +21,10 @@ const solve = (expression, x) => {
 	if (bracketsCheck(expression) === false) {
 		throw(new SyntaxError("Incorrect brackets amount in given expression"));
 	}
+	const expr = new RegExp (/^[x0-9()+*-\s]*$/);
+	if (expr.test(expression) === false) {
+		throw(new SyntaxError("Incorrect symbols in given expression"));	
+	}
 	let result;  // The default value of uninitialized 'let' is undefined
 	try {
 		result = eval(expression.replaceAll('x', x));
