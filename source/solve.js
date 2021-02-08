@@ -14,8 +14,8 @@
  * @example
  * // returns 1
  * solve('x - 2', 3);
+ * @throws {SyntaxError} Throws an error if expression is incorrect.
  * @returns {Number} Result of an expression with a substituted value x (if expression is correct).
- * @returns {undefined} If expression is incorrect - function returns undefined.
  */
 const solve = (expression, x) => {
 	if (bracketsCheck(expression) === false) {
