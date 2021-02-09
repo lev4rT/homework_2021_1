@@ -48,15 +48,13 @@ const solve = (expression, x) => {
  * @example
  * // returns false
  * bracketsCheck('(x + 2))');
+ * @throws {TypeError} Throws an type error if incorrect type argument was passed.
  * @returns {Boolean} true if expression is bracket-correct, false otherwise.
  */
 const bracketsCheck = (expression) => {
-	let openBrackets = 0;
-	let closeBrackets = 0;
-	for (const symbol of expression) {
-		if (symbol == '(') { ++openBrackets; }
-		else if (symbol == ')') { ++closeBrackets; }
+	if (typeof expression !== 'string') {
+		throw(new TypeError('Incorrect type of parameter'));
 	}
 
-	return openBrackets === closeBrackets;
+	return expression.split('(').length === expression.split(')').length;
 }
