@@ -33,5 +33,7 @@ QUnit.module('Тестируем функцию solve', function () {
 		assert.throws(() => solve(2, 2), TypeError);
 		assert.throws(() => solve('x + 2', 'qwe'), TypeError);
 		assert.throws(() => solve(2, 'x + 2'), TypeError);
+		assert.throws(() => solve('x + 2', 2.5), TypeError);
+		assert.throws(() => solve(12.3, 'x * 4'), TypeError);
 	});
 });
