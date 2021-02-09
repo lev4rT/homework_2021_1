@@ -19,15 +19,15 @@
  * @returns {Number} Result of an expression with a substituted value x (if expression is correct).
  */
 const solve = (expression, x) => {
-	if (typeof expression !== 'string' || typeof x !== 'number') {
-		throw(new TypeError('Incorrect type of parameters'));
+	if (typeof expression !== 'string' || typeof x !== 'number' || x % 1 !== 0) {
+		throw new TypeError('Incorrect type of parameters');
 	}
 	if (!bracketsCheck(expression)) {
-		throw(new SyntaxError('Incorrect brackets amount in given expression'));
+		throw new SyntaxError('Incorrect brackets amount in given expression');
 	}
 	const expr = new RegExp (/^[x0-9()+*-\s]*$/);
 	if (expr.test(expression) === false) {
-		throw(new SyntaxError('Incorrect symbols in given expression'));
+		throw new SyntaxError('Incorrect symbols in given expression');
 	}
 
 	return eval(expression.replaceAll('x', x));;
@@ -53,7 +53,7 @@ const solve = (expression, x) => {
  */
 const bracketsCheck = (expression) => {
 	if (typeof expression !== 'string') {
-		throw(new TypeError('Incorrect type of parameter'));
+		throw new TypeError('Incorrect type of parameter');
 	}
 
 	return expression.split('(').length === expression.split(')').length;
