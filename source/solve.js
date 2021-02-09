@@ -58,3 +58,4 @@ const bracketsCheck = (expression) => {
 
 	return expression.split('(').length === expression.split(')').length;
 }
+

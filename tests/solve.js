@@ -37,3 +37,4 @@ QUnit.module('Тестируем функцию solve', function () {
 		assert.throws(() => solve(12.3, 'x * 4'), TypeError);
 	});
 });
+
