@@ -25,7 +25,7 @@ const solve = (expression, x) => {
 	if (!bracketsCheck(expression)) {
 		throw new SyntaxError('Incorrect brackets amount in given expression');
 	}
-	const expr = new RegExp (/^[x0-9()+*-\s]*$/);
+	const expr = new RegExp(/^[x0-9()+*-\s]*$/);
 	if (expr.test(expression) === false) {
 		throw new SyntaxError('Incorrect symbols in given expression');
 	}
