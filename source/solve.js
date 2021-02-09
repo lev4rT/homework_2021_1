@@ -14,7 +14,8 @@
  * @example
  * // returns 1
  * solve('x - 2', 3);
- * @throws {SyntaxError} Throws an error if expression is incorrect.
+ * @throws {SyntaxError} Throws an syntax error if expression is incorrect.
+ * @throws {TypeError} Throws an type error if incorrect type arguments were passed.
  * @returns {Number} Result of an expression with a substituted value x (if expression is correct).
  */
 const solve = (expression, x) => {
@@ -28,7 +29,7 @@ const solve = (expression, x) => {
 	if (expr.test(expression) === false) {
 		throw(new SyntaxError('Incorrect symbols in given expression'));
 	}
-	
+
 	return eval(expression.replaceAll('x', x));;
 }
 
