@@ -22,7 +22,7 @@ const solve = (expression, x) => {
 	if (typeof expression !== 'string' || typeof x !== 'number') {
 		throw(new TypeError('Incorrect type of parameters'));
 	}
-	if (bracketsCheck(expression) === false) {
+	if (!bracketsCheck(expression)) {
 		throw(new SyntaxError('Incorrect brackets amount in given expression'));
 	}
 	const expr = new RegExp (/^[x0-9()+*-\s]*$/);
